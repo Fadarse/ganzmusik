@@ -1,0 +1,210 @@
+﻿/* home.css */
+
+
+
+body, html {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    
+    
+    
+}
+:root {
+    --ganz-color: #003556;
+    --accent-color: #20405d;
+    --ganzbg-color: #f4f4f4;
+    --ganz-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    display: flex;
+    color: var(--ganz-color);
+    padding: 10px 0;
+    width: 100%;
+    height: 30px;
+    position: sticky;
+    top: 0;
+    /* justify-content: space-between; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    background-image: url('/public/bground2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2rem;
+    border: 3px solid var(--ganz-color);
+    margin: -0.5% 3%;
+    cursor: pointer;
+}
+.ganz-logo {
+
+    width: 100%;
+    height: 100%;
+}
+.log-in {
+    color: var(--ganz-color);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    position: fixed;
+    right: 25%;
+    top: 5px;
+
+}
+.apply {
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 16%;
+    height: 20px;
+    position: fixed;
+    right: 10px;
+    top: 15px;
+    box-shadow: var(--ganz-shadow);
+    background-color: var(--ganz-color);
+}
+.apply:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+/* header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav {
+    background-color: #444;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card p {
+    color: #666;
+} */
+main {
+    width: 100%;
+    height: 50rem;
+    display: grid;
+    background-image: url('/public/bground2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.slider {
+    display: flex;
+    width: 90%;
+    justify-self: center;
+    height: 10rem;
+    margin-top: 1rem;
+    overflow: hidden;
+    border-radius: 20px;
+    
+    
+}
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 5s;
+    
+    
+    
+    
+}
+
+.faqs {
+    display: grid;
+    padding: 20px;
+    align-content: center;
+    gap: 5px;
+}
+.faqs h2 {
+    margin: 0;
+    justify-self: center;
+}
+.faqs .faq-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: var(--ganz-shadow);
+    padding: 10px;
+    height: fit-content;
+}
+.faqs .faq-item .faq-question {
+    margin: 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 7px;
+    /* border-bottom: solid 1.5px black; */
+    cursor: pointer;
+}
+.faqs .faq-item .faq-answer {
+    font-size: 0.9rem;
+} 
+
+
+.whatsapp {
+    display: flex;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.whatsapp :hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+    height: 10rem;
+}
