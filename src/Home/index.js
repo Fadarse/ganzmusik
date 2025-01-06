@@ -1,7 +1,8 @@
 ﻿import React from 'react';
 import './home.css';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useEffect } from 'react';
+// import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 const Header = () => {
     return (
         <header>
@@ -29,7 +30,7 @@ const ImageSlider = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 5000); // Change image every 3 seconds
+        }, 10000);
 
         return () => clearInterval(interval);
     }, [images.length]);
@@ -61,6 +62,73 @@ const ImageSlider = () => {
     );
 };
 
+
+
+const AboutUs = () => {
+    return (
+        <div className='about-us'>
+            <h2>Who we are</h2>
+            <p>provide accessible music instructions to everyone, regardless of age, race or financial backgrounds. music is as a universal language that brings about a better mental emotional health... creativity and stonger comunity
+            we belive that music has the power to tranform lives. thats why we offer free nusic education for all. our doors are open to all and we strive to create a welcoming and supportive envirenment where everyone can explore their musical talents. whether you dream of playing piano, singing in a choir, or learning to play an instrumunt with friends, we have something for you.</p>
+
+        </div>
+    )
+}
+
+    const Programs = () => {
+        const programs = [
+
+            'program 1',
+            'program 2',
+            'program 3',
+            'program 4',
+            'program 5',
+            'program 6',
+            'program 7',
+            'program 8',
+            'program 9',
+            'program 10',
+        ];
+
+        const [currentIndex, setCurrentIndex] = useState(0);
+        const shiftRight = () => {
+                    setCurrentIndex((rightItem) => (rightItem === 9 ? rightItem : rightItem + 1));
+                };
+
+        const shiftLeft = () => {
+            setCurrentIndex((leftItem) => (leftItem === 0 ? leftItem : leftItem - 1 ))
+        };
+
+        return (
+            <div className="programs-wrapper">
+            <h2>Our Programs</h2>
+
+            <div className="program-container">
+                    <div className='program' 
+                    style={{transform: `translateX(-${currentIndex * 100}%)`}}>
+                        {programs.map((program, index) => 
+                        (<div className='program-slide' key={index}>
+                            {program} </div>))}
+                    </div>
+            </div>
+            <button className='chevron-left' onClick={shiftLeft}><img  src='/chevron-right.svg' alt='chev-right'/></button>
+            <button className='chevron-right' onClick={shiftRight}> <img  src='/chevron-right.svg' alt='chev-right'/></button>
+            </div>
+        );
+    };
+
+const Values = () => {
+    return <div className='values'>
+        <h2>Vision</h2>
+        <p> creativity and stonger comunity
+        we belive that music has the power to tranform lives. thats why we offer free nusic education for all. our doors are open to all and we strive to create a welcoming and supportive envirenment where everyone can explore their musical talents. whether you dream of playing piano, singing in a choir, or learning to play an instrumunt with friends, we have something for you.</p>
+        <h2>Mission</h2>
+        <p> creativity and stonger comunity
+        we belive that music has the power to tranform lives. thats why we offer free nusic education for all. our doors are open to all and we strive to create a welcoming and supportive envirenment where everyone can explore their musical talents. whether you dream of playing piano, singing in a choir, or learning to play an instrumunt with friends, we have something for you.</p>
+
+
+    </div>
+}
 const Faqs = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -124,11 +192,14 @@ function Home() {
         <div className="container">
             <Header />
             <main>
-                <ImageSlider />
+            <ImageSlider />
+            <AboutUs />
+            <Programs />
                 <span className='whatsapp'>
                     <img src="/whatsapp_logo.svg" alt="Whatsapp Logo" />
                 </span>
-             <Faqs />
+            <Values />
+            <Faqs />
             </main>
  
             <Footer />
