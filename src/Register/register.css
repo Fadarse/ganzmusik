@@ -1,0 +1,132 @@
+﻿
+body, html {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    
+}
+
+:root {
+    --ganz-color: #003556;
+    --accent-color: #20405d;
+    --ganzbg-color: #f4f4f4;
+    --ganz-alt-color: rgba(94, 0, 24, 0.6);
+    --ganz-shadow: 0 2px 2px var(--ganz-color);
+}
+h2 {
+    color: var(--ganz-color);
+}
+
+header {
+    display: flex;
+    color: var(--ganz-color);
+    padding: 10px 0;
+    width: 100%;
+    height: 30px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    background-image: url('/public/bground2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2rem;
+    border: 3px solid var(--ganz-color);
+    margin: -0.5% 3%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.ganz-logo {
+    width: 100%;
+    height: 100%;
+    
+}
+.log-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 20px;
+    color: var(--ganz-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    position: fixed;
+    right: 25%;
+    top: 5px;
+}
+.register-main {
+    width: 100%;
+    height: 39rem;
+    display: grid;
+    align-content:start;
+    background-image: url('/public/bground2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.register-main h2 {
+    justify-self: center;
+}
+.register-form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.register-form input {
+    width: 17rem;
+    height: 1.2rem;
+    margin: 0.3rem 0;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: var(--ganz-shadow);
+}
+.register-form button {
+    width: 17rem;
+    height: 2rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: var(--ganz-color);
+    box-shadow: var(--ganz-shadow);
+    justify-self: center;
+}
+.register-form button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.03);
+}
+.register-form textarea {
+    width: 17rem;
+    height: 3rem;
+    margin: 0.3rem 0;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: var(--ganz-shadow);
+    resize: none;
+}
+.register-form select {
+    width: 7rem;
+    height: 2rem;
+    margin: 0.3rem 0;
+    padding: 0.3rem;
+    border: none;
+    font-weight: 700;
+    border-radius: 5px;
+    color: var(--ganz-color);
+    box-shadow: var(--ganz-shadow);
+}
