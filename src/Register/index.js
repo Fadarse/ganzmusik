@@ -32,7 +32,7 @@ function Register () {
                     <input type="email" placeholder="Email" required/>
                     <input type="tel" placeholder="Phone Number" required/> 
                     <input type="text" placeholder="Address" required/>
-                    <textarea placeholder="Tell what motivates you to take on this training" required/>
+                    <textarea placeholder="Tell us what motivates you to take on this training" required/>
                     Select your preferred training program:
                     <select>
                         <option>Piano</option>

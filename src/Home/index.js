@@ -2,6 +2,7 @@ import React from "react";
 import "./home.css";
 import { useState, useEffect } from "react";
 import {Link, useNavigate} from "react-router-dom";
+import {useMediaQuery} from "react-responsive";
 
 
 const Header = () => {
@@ -100,43 +101,43 @@ const AboutUs = () => {
 const Programs = () => {
   const programs = [
     {
-        title: <h2>PIANO</h2>,
+        title: <h1>PIANO</h1>,
         description:<p>... this covers a wide range of areas including basics of music reading, keyboard fingering, chords and cadences, solo and choral accompaniments, hymns playing, classicals, improvisation etc.</p>,
     },
     {
-        title: <h2>VIOLIN</h2>,
-        description:<p>...this course provides an excellent opportunity to mastering the art of violin playing, with a soothing tone, it brings every player to the reality of how much control music has on nature. You learn tunning, posture, bowing & plucking, musical interpretation, vibrato, double stops etc.  </p>,
+        title: <h1>VIOLIN</h1>,
+        description:<p>...this course provides an excellent opportunity to mastering the art of violin playing, bringing every player to the reality of how much control music has on everything. You learn tunning, posture, bowing & plucking, musical interpretation, vibrato, double stops etc.  </p>,
     },
     {
-        title: <h2>GUITAR</h2>,
+        title: <h1>GUITAR</h1>,
         description:<p>...here is a vast course in guitar playing where you are trained in proper posture and techniques, chords, scales, arpeggios and many other areas, bringing you into total command of the guitar for pleasure or carreer. </p>,
     },
     {
-        title: <h2>SAXOPHONE</h2>,
+        title: <h1>SAXOPHONE</h1>,
         description:<p>...you get practical knowledge and skill to play all the saxophone types. you learn breath control, embouchure, articulation, improvisation, scales, fingering etc. </p>,
     },
     {
-        title: <h2>DRUMS & PERCUSSION</h2>,
+        title: <h1>DRUMS & PERCUSSION</h1>,
         description:<p>...focusing on meter, syncopation, rhythms, improvisation,performance & ensemble playing, orcherstra percussion, rock, jazz, pop etc. </p>,
     },
     {
-        title: <h2>TALKING DRUM (AFRICA)</h2>,
-        description:<p>...this course gives a rare opportunity to interface with the sacred African drum (Gan-gan), and all its values as in history, origin & cultural significance, types, grips and holds, melody & improvisation, meter & complex rhythms...   </p>,
+        title: <h1>TALKING DRUM (AFRICA)</h1>,
+        description:<p>...this course gives a rare opportunity to learn the values of "Gan-gan",... its history, cultural significance, types, grips and holds, melody & improvisation, meter & complex rhythms.   </p>,
     },
     {
-        title: <h2>MUSIC PROD. & MNGT.</h2>,
-        description:<p>... a lively course that engages you with necessary ideas, know-how, and skills to handle DAWs and studio operations, labels and artist dvelopment & management, music theory and composition, online streaming, copyrights, musical collaboration and other projects,  </p>,
+        title: <h1>MUSIC PROD. & MNGT.</h1>,
+        description:<p>... a lively course that grants you skills to handle DAWs and studio operations, labels and artist development & management, online streaming, copyrights, & relevant projects,  </p>,
     },
     {
-        title: <h2>COMPOSITION</h2>,
+        title: <h1>COMPOSITION</h1>,
         description:<p>... equipping you with skills in modern and ancient composition, delving into areas such as compositional techniques, music theory, music history, orchestration, performance.</p>,
     },
     {
-        title: <h2>DANCE & CHOREOGRAPHY</h2>,
+        title: <h1>DANCE & CHOREOGRAPHY</h1>,
         description:<p>...this course opens you up to priciples and application of movements, space & time, notation, aesthetic approaches, performance, and analysis. </p>,
     },
     {
-        title: <h2>GENERAL MUSICIANSHIP</h2>,
+        title: <h1>GENERAL MUSICIANSHIP</h1>,
         description:<p>...covering a wide range of foundational musical concepts, this course is designed to bring out the best musician in you. You get to learn Tonic-solfarization, simple harmony, rhythm, ensembles, improvisation..." </p>,
     },
     
@@ -153,6 +154,13 @@ const Programs = () => {
     setCurrentIndex((leftItem) => (leftItem === 0 ? leftItem : leftItem - 1));
   };
 
+  const isTablet = useMediaQuery({query: '(min-width: 768px) and (max-width: 1023px)'});
+  const islarge = useMediaQuery({query: '(min-width: 1024px)'});
+  const programStyle = {
+    transform: isTablet ? `translateX(-${currentIndex * 116}%)`: islarge ? `translateX(-${currentIndex * 105}%)` : `translateX(-${currentIndex * 100}%)` ,
+
+  } 
+
   return (
     <div className="programs-wrapper">
       <h2>Our Programs</h2>
@@ -160,12 +168,12 @@ const Programs = () => {
       <div className="program-container">
         <div
           className="program"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
+          style={programStyle}>
+
           {programs.map((program, index) => (
             <div className="program-slide" key={index}>
               {program.title}{program.description}
-            
+                <button className="program-apply">Apply</button>
             </div>
           ))}
         </div>
@@ -201,7 +209,7 @@ const UpcomingEvents = () => {
     ];
 
     const handleMouseEnter = (e) => {
-        e.currentTarget.style.backgroundColor = "#f0f0f0";
+        e.currentTarget.style.backgroundColor = "#ffece7";
     };
 
     const handleMouseLeave = (e) => {
@@ -217,7 +225,7 @@ const UpcomingEvents = () => {
                 height:"4rem",
                 alignContent:"center",
                 }}>UPCOMING EVENTS</h2>
-            <ul>
+            <ul className="events">
                 {events.map((event, index) => (
                     <li 
                         key={index}
@@ -298,15 +306,19 @@ const Teachers = () => {
 
 const Values = () => {
   return (
+    <div className="value-container">
     <div className="values">
       <h2>Vision</h2>
       <p>
         "We are becoming a global institution that gives everyone the opportunity to share and feel the beauty in life through music".  
       </p>
+      </div>
+      <div className="values">
       <h2>Mission</h2>
       <p>
         "providing free platform for everyone to learn and make music regardless of backgrounds".
       </p>
+    </div>
     </div>
   );
 };
@@ -350,7 +362,7 @@ const Faqs = () => {
     },
     {
       question: "Can i take courses online?",
-      answer: "We strongly advise thst you learn onsite, However,  our online portal may be able to support online learning soon.",
+      answer: "We strongly advise that you learn onsite, However,  our online portal may be able to support online learning soon.",
     },
   ];
 
@@ -388,8 +400,10 @@ const Footer = () => {
     };
   return (
     <footer>
-        <h3>Contact us</h3>
+      <div className="contact-container">
+      
         <form className="contact-us" onSubmit={handleSubmit}>
+          <h3>Contact us</h3>
             <input className="name" placeholder="Name" minLength={3} maxLength={30} required></input>
             <input className="email" placeholder="Email" type="email" minLength={10} maxLength={30}required></input>
             <textarea className="message" placeholder="Your message..." autoComplete="on" required></textarea>
@@ -402,7 +416,10 @@ const Footer = () => {
             <img src="/icon-instagram.svg" />
             <img src="/icon-tiktok.svg" />
         </div>
-      <p>&copy; 2024 Ganzmusik. All rights reserved.</p>
+        
+        </div>
+        
+      <p className="copyright">&copy; 2024 Ganzmusik. All rights reserved.</p>
       <span className="whatsapp" onClick={whatsAppCall}>
           <img src="/whatsapp_logo.svg" alt="Whatsapp Logo" />
         </span>
