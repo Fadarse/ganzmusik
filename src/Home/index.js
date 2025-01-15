@@ -173,7 +173,9 @@ const Programs = () => {
           {programs.map((program, index) => (
             <div className="program-slide" key={index}>
               {program.title}{program.description}
+              <Link to="/Register">
                 <button className="program-apply">Apply</button>
+              </Link>
             </div>
           ))}
         </div>
