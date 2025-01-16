@@ -140,6 +140,7 @@ main {
     background: linear-gradient(to left, white, #ffcec0, white);
     justify-self: center;
     display: ruby;
+
 }
 .programs-wrapper h2 {
     padding: 15px;
@@ -197,7 +198,6 @@ main {
     flex-shrink: 0;
     justify-self: center;
 
-
     @media(min-width: 425px) {
         width: 24rem;
     }
@@ -227,7 +227,7 @@ main {
     position: relative;
     bottom: 55%;
     left: 1.5%;
-    z-index: 2;
+    z-index: 1;
     transform: rotate(180deg);
     cursor: pointer;
     @media(min-width: 1024px) {
@@ -246,7 +246,7 @@ main {
     position: relative;
     bottom: 55%;
     right: -76%;
-    z-index: 2;
+    z-index: 1;
     cursor: pointer;
 
     @media(min-width: 768px) {

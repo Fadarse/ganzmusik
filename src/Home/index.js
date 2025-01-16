@@ -154,10 +154,11 @@ const Programs = () => {
     setCurrentIndex((leftItem) => (leftItem === 0 ? leftItem : leftItem - 1));
   };
 
+  const isLargePhone = useMediaQuery({query: '(min-width: 425px) and (max-width: 767px)'});
   const isTablet = useMediaQuery({query: '(min-width: 768px) and (max-width: 1023px)'});
   const islarge = useMediaQuery({query: '(min-width: 1024px)'});
   const programStyle = {
-    transform: isTablet ? `translateX(-${currentIndex * 116}%)`: islarge ? `translateX(-${currentIndex * 105}%)` : `translateX(-${currentIndex * 100}%)` ,
+    transform: isLargePhone ? `translateX(-${currentIndex * 120}%)`: isTablet ? `translateX(-${currentIndex * 116}%)`: islarge ? `translateX(-${currentIndex * 105}%)` : `translateX(-${currentIndex * 100}%)` ,
 
   } 
 
